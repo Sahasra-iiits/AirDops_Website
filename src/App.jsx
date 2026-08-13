@@ -7,15 +7,18 @@ import Collections from "./components/Collections";
 import Footer from "./components/Footer";
 import { LayoutGroup, useMotionValueEvent, useScroll } from "motion/react";
 import Reviews from "./components/Reviews";
+import { useMeasure } from "react-use";
 
 function App() {
   const [startMove, setStartMove] = useState(false);
+  const [ref, { width }] = useMeasure();
   const { scrollYProgress } = useScroll({
     offset: ["start end", "end start"],
   });
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
-    setStartMove(latest > 0.356);
+    if (width <= 960) setStartMove(true);
+    else setStartMove(latest > 0.356);
   });
 
   const [products, setProducts] = useState([
@@ -63,7 +66,10 @@ function App() {
 
   return (
     <LayoutGroup>
-      <div className="h-fit bg-white text-[#050505] selection:bg-[#c289c8]">
+      <div
+        ref={ref}
+        className="h-fit bg-white text-[#050505] selection:bg-[#c289c8]"
+      >
         <Hero />
         <About startMove={startMove} />
         <About2 startMove={startMove} />

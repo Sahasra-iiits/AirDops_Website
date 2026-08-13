@@ -65,7 +65,7 @@ function Reviews() {
         className="overflow-hidden h-full w-[80vw] mask-r-from-90% mask-l-from-90%"
       >
         <motion.div
-          animate={{ x: [0, -width - 500] }}
+          animate={{ x: [0, -width*2] }}
           transition={{ repeat: Infinity, ease: "linear", duration: 10 }}
           className="h-[35vh] w-full mt-10 flex flex-row gap-5  "
         >

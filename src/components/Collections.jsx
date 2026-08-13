@@ -6,10 +6,10 @@ function Collections({ products, setProducts }) {
   const [selected, setSelected] = useState("all");
 
   return (
-    <div id="collections" className="w-full h-fit xl:px-30 lg:px-25 md:px-15 sm:px-10 py-5">
+    <div id="collections" className="w-full h-fit xl:px-30 lg:px-25 md:px-15 px-10 py-5">
       <h1 className="lg:text-4xl md:text-3xl text-2xl font-medium italic ">Our Collections</h1>
       <div className="h-0.75 w-50 bg-linear-to-r from-transparent via-[#E579F1] to-95% to-transparent "></div>
-      <div className="flex flex-row gap-8 mt-5 lg:text-lg sm:text-base text-sm text-neutral-400">
+      <div className="flex flex-row gap-8 mt-5 lg:text-lg sm:text-base text-sm text-neutral-400 sm:mb-0 mb-5">
         <p
           onClick={() => setSelected("all")}
           className={

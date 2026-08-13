@@ -3,7 +3,7 @@ import { motion, easeInOut } from "motion/react";
 
 function Footer() {
   return (
-    <motion.div className="h-[30vh] w-full bg-[#5A1865] flex flex-row items-center justify-between md:px-20 sm:px-15 px-5">
+    <motion.div className="h-[30vh] w-full bg-[#5A1865] flex flex-row items-center justify-between md:px-20 sm:px-15 px-5 sm:gap-0 gap-10">
       <motion.div
         initial={{ opacity: 0, filter: "blur(10px)", y: 30 }}
         whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}

@@ -4,8 +4,11 @@ import { div } from "motion/react-client";
 
 function About({ startMove }) {
   return (
-    <div id="about" className="w-full h-[70vh] flex flex-row">
-      <div className="w-1/2 h-full flex items-center justify-center relative">
+    <div
+      id="about"
+      className="w-full h-auto lg:h-[70vh] flex flex-col-reverse lg:flex-row lg:mt-0 mt-10"
+    >
+      <div className="w-full lg:w-1/2 h-full flex items-center justify-center relative">
         {!startMove && (
           <div>
             <motion.img
@@ -16,7 +19,7 @@ function About({ startMove }) {
               src="right.png"
               alt=""
               layoutId="right"
-              className="absolute xl:left-90 lg:left-80 h-55 top-25 z-10"
+              className="absolute lg:left-[48%] left-[48%] xl:h-55 lg:h-50 h-45 lg:top-20 top-0 z-10"
             />
             <motion.img
               initial={{ y: 10 }}
@@ -26,13 +29,17 @@ function About({ startMove }) {
               src="left.png"
               alt=""
               layoutId="left"
-              className="absolute xl:left-45 lg:left-50 left-55 h-55 top-25 z-10"
+              className="absolute lg:left-[23%] left-[35%] xl:h-55 lg:h-50 h-45 lg:top-20 top-0 z-10"
             />
           </div>
         )}
-        <motion.img src="img.png" alt="" className="z-20 h-70" />
+        <motion.img
+          src="img.png"
+          alt=""
+          className="z-20 xl:h-70 lg:h-60 h-55 ani:inline hidden"
+        />
       </div>
-      <div className="w-1/2 h-full xl:py-40 lg:py-30 md:py-15 xl:pr-35 lg:pr-27 md:pr-15 pr-5 xl:pl-10 pl-9 flex flex-col gap-8">
+      <div className=" w-full lg:w-1/2 h-full xl:py-40 lg:py-30 md:py-15 xl:pr-35 lg:pr-27 md:pr-15 pr-5 xl:pl-10 pl-9 flex flex-col gap-8">
         <motion.h1
           initial={{ filter: "blur(5px)", x: 80, opacity: 0 }}
           whileInView={{ filter: "blur(0px)", x: 0, opacity: 1 }}
