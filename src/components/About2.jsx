@@ -22,16 +22,16 @@ function About2({ startMove }) {
           transition={{ duration: 0.5 }}
         />
       )}
-      <p className="absolute text-neutral-500 top-30 left-[35%]">
+      <p className="absolute text-[#5A1865] font-semibold tracking-wide top-30 left-[35%] z-30">
         Noise Cancellation
       </p>
-      <p className="absolute text-neutral-500 bottom-30 left-[30%]">
+      <p className="absolute text-[#5A1865] font-semibold tracking-wide bottom-30 left-[30%] z-30">
         48-hour Playback
       </p>
-      <p className="absolute text-neutral-500 bottom-20 left-[55%]">
+      <p className="absolute text-[#5A1865] font-semibold tracking-wide bottom-20 left-[55%] z-30">
         With Deep Bass
       </p>
-      <p className="absolute text-neutral-500 top-25 left-[60%]">
+      <p className="absolute text-[#5A1865] font-semibold tracking-wide top-25 left-[60%] z-30">
         IP57 Dust Resistant
       </p>
 
