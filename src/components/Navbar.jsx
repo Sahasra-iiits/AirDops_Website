@@ -3,7 +3,6 @@ import { easeInOut, motion } from "motion/react";
 
 function Navbar() {
   const links = ["Home", "About", "Collections"];
-  const [hovered, setHovered] = useState("Home");
   
   return (
     <motion.div

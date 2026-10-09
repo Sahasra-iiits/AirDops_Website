@@ -6,8 +6,13 @@ function Collections({ products, setProducts }) {
   const [selected, setSelected] = useState("all");
 
   return (
-    <div id="collections" className="w-full h-fit xl:px-30 lg:px-25 md:px-15 px-10 py-5">
-      <h1 className="lg:text-4xl md:text-3xl text-2xl font-medium italic ">Our Collections</h1>
+    <div
+      id="collections"
+      className="w-full h-fit xl:px-30 lg:px-25 md:px-15 px-10 py-5"
+    >
+      <h1 className="lg:text-4xl md:text-3xl text-2xl font-medium italic ">
+        Our Collections
+      </h1>
       <div className="h-0.75 w-50 bg-linear-to-r from-transparent via-[#E579F1] to-95% to-transparent "></div>
       <div className="flex flex-row gap-8 mt-5 lg:text-lg sm:text-base text-sm text-neutral-400 sm:mb-0 mb-5">
         <p
@@ -37,31 +42,28 @@ function Collections({ products, setProducts }) {
       </div>
       <div className="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10 xl:p-25 md:p-15">
         {selected == "all" &&
-          products.map((p, idx) =>
-            ItemBox(p, idx, products, setProducts, setClicked),
-          )}
+          products.map((p, idx) => ItemBox(p, idx, setProducts, setClicked))}
 
         {selected == "wish" &&
           products.map(
-            (p, idx) =>
-              p.wishlist && ItemBox(p, idx, products, setProducts, setClicked),
+            (p, idx) => p.wishlist && ItemBox(p, idx, setProducts, setClicked),
           )}
 
         {selected == "cart" &&
           products.map(
-            (p, idx) =>
-              p.cart && ItemBox(p, idx, products, setProducts, setClicked),
+            (p, idx) => p.cart && ItemBox(p, idx, setProducts, setClicked),
           )}
       </div>
     </div>
   );
 }
 
-function ItemBox(p, idx, products, setProducts, setClicked) {
+function ItemBox(p, idx, setProducts, setClicked) {
   return (
     <motion.div
       initial={{ opacity: 0, y: -10 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -10 }}
       transition={{ delay: 0.1 * idx }}
       onClick={() => setClicked(idx)}
       key={idx}

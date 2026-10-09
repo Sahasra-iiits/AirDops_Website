@@ -58,14 +58,16 @@ function Reviews() {
   ];
   return (
     <div className="w-full h-fit xl:px-30 lg:px-25 md:px-20 px-10 py-5 mb-10 ">
-      <h1 className="lg:text-4xl md:text-3xl text-2xl font-medium italic ">What Listeners Say</h1>
+      <h1 className="lg:text-4xl md:text-3xl text-2xl font-medium italic ">
+        What Listeners Say
+      </h1>
       <div className="h-0.75 w-50 bg-linear-to-r from-transparent via-[#E579F1] to-95% to-transparent "></div>
       <div
         ref={ref}
         className="overflow-hidden h-full w-[80vw] mask-r-from-90% mask-l-from-90%"
       >
         <motion.div
-          animate={{ x: [0, -width*2] }}
+          animate={{ x: [0, -width * 2] }}
           transition={{ repeat: Infinity, ease: "linear", duration: 10 }}
           className="h-[35vh] w-full mt-10 flex flex-row gap-5  "
         >

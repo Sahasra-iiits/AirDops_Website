@@ -17,7 +17,8 @@ function App() {
   });
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
-    if (width <= 960) setStartMove(true);
+    if (width <= 960)
+      setStartMove(true); //After the width <= 960 the earpods are positioned in abt2 only.
     else setStartMove(latest > 0.356);
   });
 
@@ -65,6 +66,7 @@ function App() {
   ]);
 
   return (
+    // To have animations between child components
     <LayoutGroup>
       <div
         ref={ref}
