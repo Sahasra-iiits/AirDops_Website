@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { motion } from "motion/react";
 
 function Collections({ products, setProducts }) {
-  const [clicked, setClicked] = useState(0);
   const [selected, setSelected] = useState("all");
 
   return (
@@ -42,30 +41,29 @@ function Collections({ products, setProducts }) {
       </div>
       <div className="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10 xl:p-25 md:p-15">
         {selected == "all" &&
-          products.map((p, idx) => ItemBox(p, idx, setProducts, setClicked))}
+          products.map((p, idx) => ItemBox(p, idx, setProducts))}
 
         {selected == "wish" &&
           products.map(
-            (p, idx) => p.wishlist && ItemBox(p, idx, setProducts, setClicked),
+            (p, idx) => p.wishlist && ItemBox(p, idx, setProducts),
           )}
 
         {selected == "cart" &&
           products.map(
-            (p, idx) => p.cart && ItemBox(p, idx, setProducts, setClicked),
+            (p, idx) => p.cart && ItemBox(p, idx, setProducts),
           )}
       </div>
     </div>
   );
 }
 
-function ItemBox(p, idx, setProducts, setClicked) {
+function ItemBox(p, idx, setProducts) {
   return (
     <motion.div
       initial={{ opacity: 0, y: -10 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -10 }}
       transition={{ delay: 0.1 * idx }}
-      onClick={() => setClicked(idx)}
       key={idx}
       className="border-neutral-300 border h-fit p-4 rounded-xl text-black"
     >
@@ -75,7 +73,7 @@ function ItemBox(p, idx, setProducts, setClicked) {
         alt=""
       />
       <div>
-        <h1 className="text-lg font-medium">Aero AirDopes - {p.color}</h1>
+        <h1 className="text-lg font-medium ">Aero AirDopes - {p.color}</h1>
         <p className="text-neutral-600 text-sm italic">
           Water Resistant, Noise Cancellation
         </p>
@@ -93,9 +91,9 @@ function ItemBox(p, idx, setProducts, setClicked) {
                 prev.map((product, i) =>
                   i === idx
                     ? {
-                        ...product,
-                        wishlist: !product.wishlist,
-                      }
+                      ...product,
+                      wishlist: !product.wishlist,
+                    }
                     : product,
                 ),
               )
